@@ -18,12 +18,14 @@ public class ChatController {
     @MessageMapping("/message")
     @SendTo("/chatroom/public")
     public Message receivePublicMessage(@Payload Message message){
+        System.out.println(message);
         return message;
     }
 
     @MessageMapping("private-message")
-    public Message receivaPrivateMessage(@Payload Message message){
-        simpMessagingTemplate.convertAndSendToUser(message.getReceiverName(), "private/", message);
+    public Message recPrivateMessage(@Payload Message message){
+        simpMessagingTemplate.convertAndSendToUser(message.getReceiverName(), "/private", message);
+        System.out.println(message);
         return message;
     }
 

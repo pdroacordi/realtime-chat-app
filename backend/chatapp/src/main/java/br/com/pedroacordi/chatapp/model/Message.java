@@ -6,16 +6,16 @@ public class Message implements Serializable {
 
     private String senderName;
     private String receiverName;
-    private String content;
+    private String message;
     private Status status;
 
     public Message() {
     }
 
-    public Message(String senderName, String receiverName, String content, Status status) {
+    public Message(String senderName, String receiverName, String message, Status status) {
         this.senderName = senderName;
         this.receiverName = receiverName;
-        this.content = content;
+        this.message = message;
         this.status = status;
     }
 
@@ -24,7 +24,7 @@ public class Message implements Serializable {
         return "Message{" +
                 "senderName='" + senderName + '\'' +
                 ", receiverName='" + receiverName + '\'' +
-                ", content='" + content + '\'' +
+                ", message='" + message + '\'' +
                 ", status=" + status +
                 '}';
     }
@@ -45,12 +45,12 @@ public class Message implements Serializable {
         this.receiverName = receiverName;
     }
 
-    public String getContent() {
-        return content;
+    public String getMessage() {
+        return message;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setContent(String message) {
+        this.message = message;
     }
 
     public Status getStatus() {
